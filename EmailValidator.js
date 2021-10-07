@@ -1,5 +1,5 @@
 function emailValidator(email){
-    let emailRegex = RegExp("^[a-zA-Z][a-zA-Z0-9_-]*[a-zA-Z0-9][@][a-zA-Z0-9]+[.]([a-z]{2,3})");
+    let emailRegex = RegExp("^[a-zA-Z][a-zA-Z0-9_-]*[a-zA-Z0-9](([.+-_][a-zA-Z0-9]+)?)[@][a-zA-Z0-9]+[.]([a-z]{2,3})");
     if(emailRegex.test(email))
         console.log("Valid");
     else 
@@ -8,11 +8,17 @@ function emailValidator(email){
 
 
 try{
-    emailValidator("abc@bridgelabz.com");
+    emailValidator("abc.xyz@bridgelabz.com");
 }catch(e){
     console.error(e);
 }
 
+
+try{
+    emailValidator("abc@bridgelabz.com");
+}catch(e){
+    console.error(e);
+}
 
 try{
     emailValidator("abc@bridgelabz");
